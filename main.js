@@ -13,7 +13,11 @@ switch (queDeseaHacer){
         if (retiro <=10000){
             alert("¡Exitoso! El dinero ya esta disponible en su billetera virtual.");
         } else{
-            alert ("El limite de retiro diario es $10,000. No ingrese un monto superior.")
+            alert ("El limite de retiro diario es $10,000. No ingrese un monto superior.");
+            while (retiro >10000){
+                retiro = Number (prompt("Ingrese el monto a retirar:"));
+            }
+            alert("¡Exitoso! El dinero ya esta disponible en su billetera virtual.");
         }
         break;
 
@@ -24,6 +28,10 @@ switch (queDeseaHacer){
             alert ("¡Exitoso! El dinero se acreditara en los proximos minutos en tu billetera virtual.")
         } else {
             alert ("El limite de deposito diario es $20,000. No ingrese un monto superior.")
+            while (depositar >20000){
+                depositar = Number (prompt("Ingrese el monto a depositar:"));
+            }
+            alert("¡Exitoso! El dinero se acreditara en los proximos minutos en tu billetera virtual.");
         }
         break;
 
