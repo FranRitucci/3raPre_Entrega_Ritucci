@@ -8,15 +8,14 @@ while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito") {
 
 switch (queDeseaHacer) {
     case "extraccion":
-        alert(nombreUsuario + ", puedes extraer hasta $10 000");
-        let retiro = Number(prompt("Ingrese el monto a retirar:"));
-        if (retiro <= 10000) {
+        alert(nombreUsuario + ", puedes extraer un monto desde $1.000 hasta $10.000");
+        let retiro = Number(prompt(nombreUsuario + ", ingrese el monto a retirar:"));
+        if (retiro <= 10000 && retiro >= 1000) {
             dineroExtraido() ;
             saludoAgradecimiento() ;
         } else {
-            alert("El limite de retiro diario es $10,000. No ingrese un monto superior.");
-            while (retiro > 10000) {
-                retiro = Number(prompt("Ingrese el monto a retirar:"));
+            while (retiro > 10000 || retiro < 1000) {
+                retiro = Number(prompt(nombreUsuario + ", puede retirar minimamente $1.000 y maximo $10.000"));
             }
             dineroExtraido() ;
             saludoAgradecimiento() ;
@@ -24,15 +23,14 @@ switch (queDeseaHacer) {
         break;
 
     case "deposito":
-        alert(nombreUsuario + ", puedes depositar hasta $20 000");
-        let depositar = Number(prompt("Ingrese el monto a depositar:"));
-        if (depositar <= 20000) {
+        alert(nombreUsuario + ", puedes depositar un monto desde $5.000 hasta $20 000");
+        let depositar = Number(prompt(nombreUsuario + ", ingrese el monto a depositar:"));
+        if (depositar <= 20000 && depositar >= 5000) {
             dineroAcreditado() ;
             saludoAgradecimiento() ;
         } else {
-            alert("El limite de deposito diario es $20,000. No ingrese un monto superior.")
-            while (depositar > 20000) {
-                depositar = Number(prompt("Ingrese el monto a depositar:"));
+            while (depositar > 20000 || depositar < 5000) {
+                depositar = Number(prompt(nombreUsuario + ", puede depositar minimamente $5.000 y maximo $20.000"));
             }
             dineroAcreditado() ;
             saludoAgradecimiento() ;
