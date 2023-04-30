@@ -15,6 +15,14 @@ function restar(montoDisponible, montoExtraido) {
     return saldoEnCuenta;
 }
 
+function dineroExtraido() {
+    alert("¡Exitoso! El dinero se ha extraido hacia tu billetera virtual.")
+}
+
+function saludoAgradecimiento() {
+    alert("¡Gracias por operar con nuestra Billetera Virtual!")
+}
+
 while (queDeseaHacer != "salir") {
     while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito" && queDeseaHacer != "mi perfil") {
         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
@@ -27,14 +35,14 @@ while (queDeseaHacer != "salir") {
             let depositar = Number(prompt(nombreUsuario + ", ingrese el monto a depositar:"));
             if (depositar <= 20000 && depositar >= 5000) {
                 saldoEnCuenta = sumar(saldoEnCuenta, depositar);
-                alert(nombreUsuario + ", su saldo en cuenta es: $" + saldoEnCuenta + " y ya se encuentra acreditado.");
+                alert(nombreUsuario + " ¡dinero acreditado! Su saldo en cuenta es: $" + saldoEnCuenta);
                 saludoAgradecimiento();
             } else {
                 while (depositar > 20000 || depositar < 5000) {
                     depositar = Number(prompt(nombreUsuario + ", puede depositar minimamente $5.000 y maximo $20.000"));
                 }
                 saldoEnCuenta = sumar(saldoEnCuenta, depositar);
-                alert("Su saldo en cuenta es: " + saldoEnCuenta);
+                alert(nombreUsuario + " ¡dinero acreditado! Su saldo en cuenta es: $" + saldoEnCuenta);
                 saludoAgradecimiento();
             }
             break;
@@ -80,12 +88,4 @@ while (queDeseaHacer != "salir") {
             break;
     }
     queDeseaHacer = (prompt(nombreUsuario + ", para operar ingrese: 'deposito', 'extraccion' o 'mi perfil'. Para finalizar: 'salir'"));
-}
-
-function dineroExtraido() {
-    alert("¡Exitoso! El dinero se ha extraido hacia tu billetera virtual.")
-}
-
-function saludoAgradecimiento() {
-    alert("¡Gracias por operar con nuestra Billetera Virtual!")
 }
