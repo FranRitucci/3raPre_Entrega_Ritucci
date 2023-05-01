@@ -25,7 +25,7 @@ while (validacion4.length !== 6 ||/[^a-zA-Z]/.test(validacion4)){
 }
 alert(validacionSeguridad[4]);
 let validacion5 = (prompt(""));
-while (validacion5 != "argentina" && validacion5 != "Argentina" && validacion5 != "ARGENTINA"){
+while (validacion5.toLowerCase() != "argentina"){
     validacion5 = (prompt("La mejor seleccion de futbol mundial ="));
 }
 alert("Usted cumplio con la verificacion de seguridad y reconoce que la selccion ARGENTINA es la mas grande del mundo. Puede continuar");
@@ -59,7 +59,7 @@ function saludoAgradecimiento() {
 }
 
 //NUCLEO DEL PROGRAMA. WHILE QUE MANTIENE EL PROGRAMA EN CICLO - WHILE PARA VALIDAR EL INGRESO DE LAS OPERACIONES CORRECTAS - SWITCH QUE CONTIENE LAS OPERACIONES
-while (queDeseaHacer != "salir" && queDeseaHacer != "Salir") {
+while (queDeseaHacer.toLowerCase() != "salir") {
     while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito" && queDeseaHacer != "mi perfil") {
         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
         queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
@@ -96,7 +96,7 @@ while (queDeseaHacer != "salir" && queDeseaHacer != "Salir") {
                 let retiro = Number(prompt(nombreUsuario + ", su saldo disponible es: $" + saldoEnCuenta + ". ingrese el monto a retirar:"));
                 while (retiro < 1000 || retiro > saldoEnCuenta) {
                     alert(nombreUsuario + ", puedes extraer minimamente $1.000 y tu saldo disponible en cuenta es: $" + saldoEnCuenta);
-                    retiro = Number(prompt(nombreUsuario + ", su saldo disponible es: $" + saldoEnCuenta + "ingrese el monto a retirar:"));
+                    retiro = Number(prompt(nombreUsuario + ", su saldo disponible es: $" + saldoEnCuenta + " ingrese el monto a retirar:"));
                 }
                 dineroExtraido()
                 saldoEnCuenta = restar(saldoEnCuenta, retiro);
