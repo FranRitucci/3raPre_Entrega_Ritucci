@@ -62,7 +62,7 @@ function saludoAgradecimiento() {
 while (queDeseaHacer != "salir") {
     while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito" && queDeseaHacer != "mi perfil") {
         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
-        queDeseaHacer = prompt("Ingrese: deposito, extraccion o mi perfil");
+        queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
     }
 
     switch (queDeseaHacer) {
@@ -94,7 +94,7 @@ while (queDeseaHacer != "salir") {
             } else if (saldoEnCuenta >= 1000) {
                 alert(nombreUsuario + ", puedes extraer minimamente $1.000 y tu saldo disponible en cuenta es: $" + saldoEnCuenta);
                 let retiro = Number(prompt(nombreUsuario + ", su saldo disponible es: $" + saldoEnCuenta + ". ingrese el monto a retirar:"));
-                while (retiro < 1000) {
+                while (retiro < 1000 || retiro > saldoEnCuenta) {
                     alert(nombreUsuario + ", puedes extraer minimamente $1.000 y tu saldo disponible en cuenta es: $" + saldoEnCuenta);
                     retiro = Number(prompt(nombreUsuario + ", su saldo disponible es: $" + saldoEnCuenta + "ingrese el monto a retirar:"));
                 }
