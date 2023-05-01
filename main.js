@@ -25,7 +25,7 @@ while (validacion4.length !== 6 ||/[^a-zA-Z]/.test(validacion4)){
 }
 alert(validacionSeguridad[4]);
 let validacion5 = (prompt(""));
-while (validacion5 != "argentina"){
+while (validacion5 != "argentina" && validacion5 != "Argentina" && validacion5 != "ARGENTINA"){
     validacion5 = (prompt("La mejor seleccion de futbol mundial ="));
 }
 alert("Usted cumplio con la verificacion de seguridad y reconoce que la selccion ARGENTINA es la mas grande del mundo. Puede continuar");
@@ -59,7 +59,7 @@ function saludoAgradecimiento() {
 }
 
 //NUCLEO DEL PROGRAMA. WHILE QUE MANTIENE EL PROGRAMA EN CICLO - WHILE PARA VALIDAR EL INGRESO DE LAS OPERACIONES CORRECTAS - SWITCH QUE CONTIENE LAS OPERACIONES
-while (queDeseaHacer != "salir") {
+while (queDeseaHacer != "salir" && queDeseaHacer != "Salir") {
     while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito" && queDeseaHacer != "mi perfil") {
         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
         queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
