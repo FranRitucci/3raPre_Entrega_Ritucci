@@ -30,7 +30,7 @@ while (validacion5.toLowerCase() != "argentina"){
 }
 alert("Usted cumplio con la verificacion de seguridad y reconoce que la selccion ARGENTINA es la mas grande del mundo. Puede continuar");
 
-//VARIABLES QUE CONFORMAN EL PERFIL DEL USUARIO Y LA OPERACION CON LA QUE DESEA PROCEDER
+// //VARIABLES QUE CONFORMAN EL PERFIL DEL USUARIO Y LA OPERACION CON LA QUE DESEA PROCEDER
 let nombreUsuario = (prompt("Ingrese su nombre"));
 let apellidoUsuario = (prompt("Ingrese su apellido"));
 let suEdad = Number(prompt("Ingrese su edad"));
@@ -55,23 +55,23 @@ function dineroExtraido() {
 }
 
 function saludoAgradecimiento() {
-    alert("¡Gracias por operar con nuestra Billetera Virtual!")
+    alert("¡Gracias por operar con Billetera Virtual 2.0!")
 }
 
 //NUCLEO DEL PROGRAMA. WHILE QUE MANTIENE EL PROGRAMA EN CICLO - WHILE PARA VALIDAR EL INGRESO DE LAS OPERACIONES CORRECTAS - SWITCH QUE CONTIENE LAS OPERACIONES
 while (queDeseaHacer.toLowerCase() != "salir") {
-    while (queDeseaHacer != "extraccion" && queDeseaHacer != "deposito" && queDeseaHacer != "mi perfil") {
+    while (queDeseaHacer.toLowerCase() != "extraccion" && queDeseaHacer.toLowerCase() != "deposito" && queDeseaHacer.toLowerCase() != "mi perfil") {
         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
         queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
     }
 
-    switch (queDeseaHacer) {
+    switch (queDeseaHacer.toLowerCase()) {
         case "deposito":
             alert(nombreUsuario + ", puedes depositar un monto desde $5.000 hasta $20.000");
             let depositar = Number(prompt(nombreUsuario + ", ingrese el monto a depositar:"));
             if (depositar <= 20000 && depositar >= 5000) {
                 saldoEnCuenta = sumar(saldoEnCuenta, depositar);
-                alert(nombreUsuario + " ¡dinero acreditado! Su saldo en cuenta es: $" + saldoEnCuenta);
+                alert(nombreUsuario + " ¡Dinero acreditado! Su saldo en cuenta es: $" + saldoEnCuenta);
                 saludoAgradecimiento();
             } else {
                 while (depositar > 20000 || depositar < 5000) {
@@ -87,7 +87,7 @@ while (queDeseaHacer.toLowerCase() != "salir") {
             if (saldoEnCuenta < 1000) {
                 alert(nombreUsuario + ", el saldo disponible en cuenta es menor al minimo de retiro. Su saldo en cuenta es: $" + saldoEnCuenta + ". Ingrese ' cancelar ' para volver al menu");
                 let cancelarOperacion = (prompt("Ingrese 'cancelar' para cancelar y seguir operando."));
-                while (cancelarOperacion != "cancelar") {
+                while (cancelarOperacion.toLowerCase() != "cancelar") {
                     alert(nombreUsuario + ", el saldo disponible en cuenta es menor al minimo de retiro. Su saldo en cuenta es: $" + saldoEnCuenta + ". Ingrese ' cancelar ' para cancelar");
                     cancelarOperacion = (prompt("Ingrese 'cancelar' para cancelar y seguir operando."));
                 }
@@ -124,4 +124,67 @@ while (queDeseaHacer.toLowerCase() != "salir") {
             break;
     }
     queDeseaHacer = (prompt(nombreUsuario + ", para operar ingrese: 'deposito', 'extraccion' o 'mi perfil'. Para finalizar: 'salir'"));
+}
+
+//ARRAY DE OBJETOS QUE CONTIENEN PERSONAS REPRESENTANTES DE BILLETERA VIRTUAL
+const representantes = [
+    {
+        nombre: "nicolas",
+        ubicacion: "buenos aires",
+        whatsapp: 1133557799
+    },
+    {
+        nombre: "santiago",
+        ubicacion: "interior de argentina",
+        whatsapp: 34222446688
+    },
+    {
+        nombre: "alejo",
+        ubicacion: "buenos aires",
+        whatsapp: 1144779900
+    },
+    {
+        nombre: "sofia",
+        ubicacion: "exterior de argentina",
+        whatsapp: 5580809256
+    },
+    {
+        nombre: "lola",
+        ubicacion: "exterior de argentina",
+        whatsapp: 5581899157,
+    },
+];
+
+//ARRAY PEQUEÑO QUE CONTIENE LAS DOS SUCURSALES FISICAS ACTUALES
+const sucursales = ["*Sucursal1>> Pais: ESPAÑA - Direccion: Calle falsa 123", "**Sucursal2>> Pais: ARGENTINA - Direccion: Av. 9 de Julio 1535"];
+
+//VARIABLE QUE OFRECE CONOCER A LOS REPRESENTANTES O SALIR
+let contactarRepresentante = (prompt("Para conocer a nuestros representantes presione cualquier tecla. Si usted NO desea contactar con uno de nuestros representantes ingrese 'salir'"));
+
+//CICLO QUE CONTIENE LAS FUNCONES NECESARIAS PARA DEVOLVER VIA CONSOLA AL USUARIO LOS RESULTADOS DE UN REPRESENTANTE DEPENDIENDO SU UBICACION
+while (contactarRepresentante.toLowerCase() != "salir") {
+    let ubicacionUsuario = (prompt("ingrese su ubicacion: 'buenos aires', 'interior de argentina' o 'exterior de argentina'"));
+    while (ubicacionUsuario.toLowerCase() != "buenos aires" && ubicacionUsuario.toLowerCase() != "interior de argentina" && ubicacionUsuario.toLowerCase() != "exterior de argentina") {
+        ubicacionUsuario = (prompt("ingrese su ubicacion: 'buenos aires', 'interior de argentina' o 'exterior de argentina'"));
+    }
+    if (ubicacionUsuario.toLowerCase() === "buenos aires") {
+        const resultadoRepresentante1 = representantes.filter((localizacion) => localizacion.ubicacion.includes("buenos aires"));
+        console.log(resultadoRepresentante1);
+    } if (ubicacionUsuario.toLowerCase() === "interior de argentina") {
+        const resultadoRepresentante2 = representantes.filter((localizacion) => localizacion.ubicacion.includes("interior de argentina"));
+        console.log(resultadoRepresentante2);
+    } if (ubicacionUsuario.toLowerCase() === "exterior de argentina") {
+        const resultadoRepresentante3 = representantes.filter((localizacion) => localizacion.ubicacion.includes("exterior de argentina"));
+        console.log(resultadoRepresentante3);
+    }
+
+    contactarRepresentante = (prompt("Podra ver un asesor disponible segun su ubicacion ingresada en CONSOLA. Ingrese 'salir' para finalizar o presione cualquier tecla para continuar"));
+}
+
+//VARIABLE QUE OFRECE AL USUARIO CONOCER LAS SUCURSALES VIA ALERT. WHILE QUE DA LA POSIBILIDAD DE SALIR DEFINITIVAMENTE
+let conocerSucursales = (prompt("Para conocer nuestras sucursales y su ubicacion presione cualquier tecla. Para cancelar ingrese 'salir'"));
+while (conocerSucursales.toLocaleLowerCase() != "salir"){
+    alert(sucursales);
+
+    conocerSucursales = (prompt("Para ver nuestras sucursales nuevamente presione cualquier tecla. Para cancelar ingrese 'salir'"));
 }
