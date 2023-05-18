@@ -1,0 +1,12 @@
+#topPage{
+    display: flex;
+    justify-content: center;
+}
+
+.incorrecto{
+    color: red;
+}
+
+.correcto{
+    color: green;
+}
