@@ -4,46 +4,18 @@ const validacionSeguridad = ["2 + 2 =", "3 x 3 =", "Escriba: aUtobUs", "Nombre p
 let domBienvenida = document.getElementById("domValidacion");
 domBienvenida.innerHTML = "Resuelva las siguientes pautas para comprobar que usted NO es un robot:" ;
 
-let seguridad0 = document.getElementById("validacion0");
-seguridad0.innerHTML = `${validacionSeguridad[0]}`;
-let input1 = document.getElementById("valorBox0")
-input1.addEventListener('input', () => {
-    console.log(input1.value)
+const lista = document.getElementById("lista");
+console.log(lista);
+
+validacionSeguridad.forEach(item => {
+    console.log(item);
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    label.textContent = item
+    input.textContent = input
+    lista.appendChild(label);
+    lista.appendChild(input);
 });
-
-if (input1.value != 4){
-    let validacionErronea = document.getElementById("validacionCorrecta");
-    validacionErronea.innerHTML = "Incorrecto";
-    validacionCorrecta.className = "incorrecto";
-    
-} else{
-    validacionErronea = document.getElementById("validacionCorrecta");
-    validacionErronea.innerHTML = "Correcto";
-    validacionCorrecta.className = "correcto";
-}
-
-let validarValor = document.getElementById("boxSecurity0");
-validarValor.addEventListener("submit", validarEntrada);
-
-function validarEntrada(e) {
-    e.preventDefault ();
-    console.log("Formulario validado");
-}
-
-
-let seguridad1 = document.getElementById("validacion1");
-seguridad1.innerHTML = `${validacionSeguridad[1]}`;
-
-let seguridad2 = document.getElementById("validacion2");
-seguridad2.innerHTML = `${validacionSeguridad[2]}`;
-
-let seguridad3 = document.getElementById("validacion3");
-seguridad3.innerHTML = `${validacionSeguridad[3]}`;
-
-let seguridad4 = document.getElementById("validacion4");
-seguridad4.innerHTML = `${validacionSeguridad[4]}`;
-
-
 
 
 // alert(validacionSeguridad[0]);
@@ -104,8 +76,8 @@ seguridad4.innerHTML = `${validacionSeguridad[4]}`;
 // //NUCLEO DEL PROGRAMA. WHILE QUE MANTIENE EL PROGRAMA EN CICLO - WHILE PARA VALIDAR EL INGRESO DE LAS OPERACIONES CORRECTAS - SWITCH QUE CONTIENE LAS OPERACIONES
 // while (queDeseaHacer.toLowerCase() != "salir") {
 //     while (queDeseaHacer.toLowerCase() != "extraccion" && queDeseaHacer.toLowerCase() != "deposito" && queDeseaHacer.toLowerCase() != "mi perfil") {
-//         alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
-//         queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
+//         // alert("La operacion que sedea no se reconoce, ingrese 'deposito', 'extraccion' o ingrese 'mi perfil'");
+//         // queDeseaHacer = prompt("Ingrese: 'deposito', 'extraccion' o 'mi perfil'");
 //     }
 
 //     switch (queDeseaHacer.toLowerCase()) {
