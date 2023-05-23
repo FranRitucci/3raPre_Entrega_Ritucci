@@ -11,8 +11,42 @@
     color: green;
 }
 
+.formValidacion{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: black;
+}
+
 .cLista{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 80%;
+}
+
+.btnValidacion{
+    text-align: center;
+}
+
+.formDatosUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: black;
+}
+
+.listaDatosUser{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.btnsDatosUser{
+    display: flex;
+    justify-content: center;
 }

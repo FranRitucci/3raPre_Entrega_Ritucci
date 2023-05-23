@@ -2,7 +2,7 @@
 const validacionSeguridad = ["2 + 2 =", "3 x 3 =", "Escriba: aUtobUs", "Nombre propio de 6 letras:", "El ultimo campeon del mundo:"];
 
 let domBienvenida = document.getElementById("domValidacion");
-domBienvenida.innerHTML = "Resuelva las siguientes pautas para comprobar que usted NO es un robot:" ;
+domBienvenida.innerHTML = "Resuelva las validaciones de seguridad:" ;
 
 const lista = document.getElementById("lista");
 console.log(lista);
@@ -17,39 +17,12 @@ validacionSeguridad.forEach(item => {
     lista.appendChild(input);
 });
 
+const domUsuario = document.getElementById("IngresoUsuario");
 
-// alert(validacionSeguridad[0]);
-// let validacion1 = Number(prompt(""));
-// while (validacion1 != 4) {
-//     validacion1 = (prompt("2+2 ="));
-// }
-// alert(validacionSeguridad[1]);
-// let validacion2 = Number(prompt(""));
-// while (validacion2 != 9){
-//     validacion2 = Number(prompt("3x3 ="));
-// }
-// alert(validacionSeguridad[2]);
-// let validacion3 = (prompt(""));
-// while (validacion3 != "aUtobUs"){
-//     validacion3 = (prompt("aUtobUs ="));
-// }
-// alert(validacionSeguridad[3]);
-// let validacion4 = (prompt(""));
-// while (validacion4.length !== 6 ||/[^a-zA-Z]/.test(validacion4)){
-//     validacion4 = (prompt("Un nombre de 6 letras ="));
-// }
-// alert(validacionSeguridad[4]);
-// let validacion5 = (prompt(""));
-// while (validacion5.toLowerCase() != "argentina"){
-//     validacion5 = (prompt("La mejor seleccion de futbol mundial ="));
-// }
-// alert("Usted cumplio con la verificacion de seguridad y reconoce que la selccion ARGENTINA es la mas grande del mundo. Puede continuar");
+domUsuario.innerHTML ="Ingrese los datos de usuario:"
 
-// // //VARIABLES QUE CONFORMAN EL PERFIL DEL USUARIO Y LA OPERACION CON LA QUE DESEA PROCEDER
-// let nombreUsuario = (prompt("Ingrese su nombre"));
-// let apellidoUsuario = (prompt("Ingrese su apellido"));
-// let suEdad = Number(prompt("Ingrese su edad"));
-// let queDeseaHacer = (prompt(nombreUsuario + ", para operar ingrese: 'deposito', 'extraccion' o ' mi perfil '. Para finalizar: 'salir'"));
+
+
 
 // //VARIABLE QUE CONSERVA EL SALDO EN CUENTA. INICIALIZADA EN 0 Y FUNCIONES QUE INCREMENTAN Y DECREMENTAN EL SALDO SEGUN DEPOSITOS Y EXTRACCIONES
 // let saldoEnCuenta = 0;

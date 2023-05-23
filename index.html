@@ -13,19 +13,32 @@
     <header id="topPage">
         <h1 class="mainTitle">Simulador interactivo - Billetera virtual V3.0</h1>
     </header>
-    <section>
+    <section id="section 1">
         <h2 id="domValidacion"></h2>
-        <ul id="lista" class="cLista">
-
-        </ul>
+        <form class="formValidacion">
+            <ul id="lista" class="cLista">
+            </ul>
+            <div class="btnValidacion">
+                <input type="submit" value="Validar">
+            </div>
+        </form>
+    </section>
+    <section id="section 2">
+        <h3 id="IngresoUsuario"></h3>
+        <form id="formUser" class="formDatosUser">
+            <ul id="datosUsuario" class="listaDatosUser">
+                <input placeholder="Nombre" type="text"></input>
+                <input placeholder="Apellido" type="text"></input>
+                <input placeholder="Edad" type="number"></input>
+            </ul>
+            <div class="btnsDatosUser">
+                <input type="submit" value="Extraccion">
+                <input type="submit" value="Deposito">
+                <input type="submit" value="Mi perfil">
+            </div>
+        </form>
     </section>
     <main id="programa">
-        <h3 id="reingresoUser1"></h3>
-        <div id="whilePrograma">
-            <input type="submit" value="extraccion">
-            <input type="submit" value="deposito">
-            <input type="submit" value="mi perfil">
-        </div>
     </main>
     <!--LINK JS-->
     <script src="main.js"></script>
