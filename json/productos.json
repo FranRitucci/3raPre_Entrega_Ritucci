@@ -1,0 +1,31 @@
+[{
+    "id": 1,
+    "tipo": "Pretal",
+    "nombre": "Pretal-Aventura",
+    "precio": 2900,
+    "foto": "./media/producto1.jpg"
+}, {
+    "id": 2,
+    "tipo": "Buzo",
+    "nombre": "Buzo Urban-Capucha",
+    "precio": 3700,
+    "foto": "./media/producto2.jpg"
+}, {
+    "id": 3,
+    "tipo": "Juguete",
+    "nombre": "Mordillo-Hueso",
+    "precio": 1500,
+    "foto": "./media/producto3.jpg"
+}, {
+    "id": 4,
+    "tipo": "Juguete",
+    "nombre": "Pelota estimulante",
+    "precio": 1100,
+    "foto": "./media/producto4.jpg"
+}, {
+    "id": 5,
+    "tipo": "Jueugte",
+    "nombre": "Trenza gigante",
+    "precio": 1400,
+    "foto": "./media/producto5.jpg"
+}]
